@@ -1,0 +1,13 @@
+- name: Deploy Fundraiser App to Kubernetes
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Apply Kubernetes namespace
+      kubernetes.core.k8s:
+        state: present
+        src: ../k8s/namespace.yaml
+
+    - name: Apply Kubernetes manifests
+      kubernetes.core.k8s:
+        state: present
+        src: "../k8s/"

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fundraiser-deployment
+  namespace: fundraiser
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fundraiser
+  template:
+    metadata:
+      labels:
+        app: fundraiser
+    spec:
+      containers:
+      - name: fundraiser-app
+        image: your-dockerhub-username/fundraiser-app:latest
+        ports:
+        - containerPort: 5000

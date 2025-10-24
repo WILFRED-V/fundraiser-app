@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fundraiser Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to Fundraiser App</h1>
+    <a href="{{ url_for('add') }}" class="btn">Add Fundraiser</a>
+    <ul>
+        {% for f in fundraisers %}
+        <li>
+            <a href="{{ url_for('fundraiser', name=f.name) }}">{{ f.name }}</a> - Goal: ₹{{ f.goal }}
+        </li>
+        {% else %}
+        <p>No fundraisers yet.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
