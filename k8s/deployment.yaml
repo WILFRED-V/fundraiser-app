@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: fundraiser-app
-        image: your-dockerhub-username/fundraiser-app:latest
+        image: wilfred2k05/fundraiser-app:latest
         ports:
         - containerPort: 5000

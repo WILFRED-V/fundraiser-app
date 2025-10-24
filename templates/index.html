@@ -7,10 +7,12 @@
 <body>
     <h1>Welcome to Fundraiser App</h1>
     <a href="{{ url_for('add') }}" class="btn">Add Fundraiser</a>
+
     <ul>
         {% for f in fundraisers %}
         <li>
             <a href="{{ url_for('fundraiser', name=f.name) }}">{{ f.name }}</a> - Goal: ₹{{ f.goal }}
+            <p>{{ f.description }}</p>
         </li>
         {% else %}
         <p>No fundraisers yet.</p>
